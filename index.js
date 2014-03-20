@@ -9,13 +9,13 @@ var notify = function(event, last_downtime){
 }
 
 instapush.settings({
-	id: 'ID',
-	secret: 'SECRET'
+	id: 'xx',
+	secret: 'xx'
 });	
 
-monitor('myurlsadsadasdasdas.com').on('connection-error',function(){
+monitor('myurlsadsadasdasdas.com').on('error',function(){
 	  last_downtime = new Date();
-	  notify("http-error", last_downtime);
+	  notify("error", last_downtime);
 }).on('recovery',function(){
 	  notify("recovery", last_downtime);
 
